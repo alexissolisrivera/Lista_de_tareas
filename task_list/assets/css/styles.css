@@ -11,10 +11,79 @@ body {
     background-color: #232323;
 }
 
+body.light {
+    background-color: #dadada;
+}
+
+body.light .title {
+    color: black;
+}
+
+body.light .task {
+    position: relative;
+    left: 50px;
+    color: rgb(5, 5, 5);
+}
+
+body.light .input {
+    width: 60%;
+    height: 40px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #808080;
+    background: none;
+    color: black;
+}
+
+
 .container {
     width: 60%;
     height: 100%;
     margin: 92px auto;
+}
+
+.switch {
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+}
+
+.switch::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.switch.active {
+    background: orange;
+    color: #000;
+}
+
+.switch.active::after {
+    right: 0;
+    left: unset;
+}
+
+.span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
 }
 
 .title {
@@ -57,41 +126,41 @@ body {
     cursor: pointer;
 }
 
-.btnToDo:hover{
+.btnToDo:hover {
     background: #0A84F8;
 }
 
-.containerTasks{
+.containerTasks {
     width: 100%;
     height: 100vh;
 }
 
-.containerList{
+.containerList {
     width: 100%;
     height: 74px;
     display: flex;
     justify-content: space-between;
 }
 
-.containerSubList{
+.containerSubList {
     display: flex;
     width: 80%;
     height: 100%;
     align-items: center;
 }
 
-.box{
+.box {
     position: relative;
     left: 20px;
 }
 
-.task{
+.task {
     position: relative;
     left: 50px;
     color: white;
 }
 
-.listBtn{
+.listBtn {
     width: 20%;
     height: 100%;
     display: flex;
@@ -99,12 +168,12 @@ body {
     align-items: center;
 }
 
-.btnDelete{
+.btnDelete {
     border: 0;
     background: none;
 }
 
-.trash{
+.trash {
     font-size: 20px;
     color: rgb(246, 54, 54);
     cursor: pointer;

@@ -1,6 +1,13 @@
 const input = document.getElementById('input');
 const btnToDo = document.getElementById('btnToDo');
 const containerTasks = document.querySelector('.containerTasks');
+//button swicth
+const btnSwitch = document.querySelector('#switch');
+
+btnSwitch.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    btnSwitch.classList.toggle('active')
+})
 
 const saveTask = () => {
     const task = {
@@ -15,7 +22,7 @@ const saveTask = () => {
         get.push(task);
         localStorage.setItem('tasks', JSON.stringify(get));
     }
-    showTasks(); 
+    showTasks();
     input.value = '';
 };
 
@@ -39,13 +46,13 @@ const showTasks = () => {
     }
 }
 
-const deleteTask =(task)=>{
+const deleteTask = (task) => {
     let tasks = JSON.parse(localStorage.getItem('tasks'));
     for (let i = 0; i < tasks.length; i++) {
-        if(task===tasks[i].inputTask)
-        tasks.splice(i,1);
+        if (task === tasks[i].inputTask)
+            tasks.splice(i, 1);
     }
-    localStorage.setItem('tasks',JSON.stringify(tasks));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
     showTasks();
 }
 
